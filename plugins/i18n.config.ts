@@ -1,8 +1,8 @@
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.i18n = defineI18nConfig(() => ({
     legacy: false,
-    locale: "en",
-    fallbackLocale: "en",
+    locale: "uz",
+    fallbackLocale: "uz",
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: "i18",
