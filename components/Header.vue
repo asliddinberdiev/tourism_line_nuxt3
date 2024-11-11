@@ -1,63 +1,57 @@
-<script lang="ts"></script>
+<script setup lang="ts">
+import { Pagination, Navigation, EffectCreative } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-  
+const carousels = [
+  {
+    img: "https://uzbekistan.travel/storage/app/media/uploaded-files/samarkand-uzbekistan-kupol-mechet-ploshchad.png",
+    info: "Samarqand Madaniyatlar chorrahasi",
+  },
+  {
+    img: "https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/cropped-images/shutterstock_1007253181-0-0-0-0-1728474450.jpg",
+    info: "Buxoro Islom madaniyati poytaxti",
+  },
+  {
+    img: "https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/cropped-images/2079897013-0-0-0-0-1728537570.jpg",
+    info: "Xiva - Turk dunyosining poytaxti",
+  },
+];
+</script>
 
 <template>
-  <nav
-    class="h-16 px-2 md:px-10 xl:px-14 flex items-center justify-between bg-red-600"
-  >
-    <!-- logo -->
-    <a href="/">
-      <img
-        src="/imgs/logo-2.png"
-        alt="travel line"
-        height="h-16"
-        class="object-cover h-10"
-      />
-    </a>
-
-    <!-- desktop menu -->
-    <ul
-      class="hidden md:flex items-center justify-between md:gap-x-14 lg:gap-x-16 xl:gap-x-24"
+  <div class="">
+    <Navbar />
+    <swiper
+      :slidesPerView="1"
+      :spaceBetween="0"
+      :loop="true"
+      :pagination="{
+        clickable: true,
+      }"
+      :speed="1200"
+      :navigation="true"
+      :modules="[EffectCreative, Pagination, Navigation]"
+      class="h-dvh w-full"
     >
-      <li>
-        <a
-          href="/"
-          class="text-xl uppercase text-text hover:text-text transition-colors"
+      <swiper-slide v-for="(carousel, index) in carousels" :key="index">
+        <img
+          :src="carousel.img"
+          :alt="carousel.text"
+          class="object-cover w-full h-full"
+        />
+        <div
+          class="z-10 absolute top-0 left-0 w-full h-full bg-black/30 flex items-end justify-center"
         >
-          Home
-        </a>
-      </li>
-      <li>
-        <a href="#about" class="text-xl uppercase hover:text-text"> About </a>
-      </li>
-      <li>
-        <a
-          href="#gallery"
-          class="text-xl uppercase hover:text-text transition-colors"
-        >
-          Gallery
-        </a>
-      </li>
-      <li>
-        <button
-          type="button"
-          class="bg-primary px-7 py-1.5 rounded-3xl font-medium hover:text-white transition-colors duration-300 ease-in-out"
-        >
-          Contact
-        </button>
-      </li>
-    </ul>
-
-    <!-- mobile menu -->
-
-    <div
-      class="flex md:hidden flex-col w-8 gap-y-1.5 hover:cursor-pointer hover:gap-y-1 transition-all duration-300"
-    >
-    <!-- <span class="inline-block w-full py-0.5 bg-black"></span>
-        <span class="inline-block w-full py-0.5 bg-black"></span>
-        <span class="inline-block w-full py-0.5 bg-black"></span> -->
-    </div>
- 
-  </nav>
+          <h1
+            class="text-white text-4xl font-bold mb-32 mx-3 text-center backdrop-blur-sm p-2 bg-black/30 rounded-md"
+          >
+            {{ carousel.info }}
+          </h1>
+        </div>
+      </swiper-slide>
+    </swiper>
+  </div>
 </template>
