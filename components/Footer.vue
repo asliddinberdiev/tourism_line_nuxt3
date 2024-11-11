@@ -10,7 +10,7 @@
     >
       <a href="/">
         <img
-          src="./imgs/logo-2.png"
+          src="/imgs/logo-2.png"
           alt="durmon logo"
           width="231"
           height="52"

@@ -1,12 +1,8 @@
-<script setup lang="ts">
-console.log("hello world");
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  
-  <Header/>
-  <Footer/>
-  
-
-
+  <div>
+    <Header />
+    <Footer />
+  </div>
 </template>
