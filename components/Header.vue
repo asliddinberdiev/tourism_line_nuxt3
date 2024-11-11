@@ -39,7 +39,7 @@ const carousels = [
       <swiper-slide v-for="(carousel, index) in carousels" :key="index">
         <img
           :src="carousel.img"
-          :alt="carousel.text"
+          :alt="carousel.info"
           class="object-cover w-full h-full"
         />
         <div
