@@ -12,7 +12,7 @@ const model = defineModel();
 <template>
   <input
     v-bind="$attrs"
-    class="border border-gray-300 rounded-md px-2 py-1 focus:outline-blue-600 w-full"
+    class="border border-gray-300 rounded-md px-4 py-2 focus:outline-blue-600 w-full"
     type="text"
     :placeholder="placeholder"
     v-model="model"
