@@ -8,10 +8,10 @@ const formData = reactive({
 </script>
 
 <template>
-  <!-- form -->
+  <!-- section form -->
   <section class="flex items-center justify-center p-2 w-full">
     <div
-      class="flex flex-col md:flex-row justify-between items-center max-w-screen-lg gap-4"
+      class="flex flex-col md:flex-row justify-between items-center max-w-screen-lg gap-4 md:gap-8"
     >
       <img
         class="object-cover w-full md:w-1/2 rounded-md"
@@ -20,22 +20,14 @@ const formData = reactive({
         src="https://alanyatransfer.com/wp-content/uploads/2023/07/Kapadokya-transfer.png"
       />
 
-      <div class="flex items-center flex-col w-full md:w-1/2">
+      <div class="flex items-center flex-col w-full md:w-1/2 gap-4">
         <h2 class="mt-3 font-medium uppercase text-xl md:text-2xl">
           Lets us plan your dream trip - just fill out the form
         </h2>
-        <BaseInput v-model="formData.name" placeholder="Name" class="mb-3" />
-        <BaseInput
-          v-model="formData.surname"
-          placeholder="Surname"
-          class="mb-3"
-        />
-        <BaseInput v-model="formData.email" placeholder="Email" class="mb-3" />
-        <BaseInput
-          v-model="formData.phone"
-          placeholder="Phone Number"
-          class="mb-3"
-        />
+        <BaseInput v-model="formData.name" placeholder="Name" />
+        <BaseInput v-model="formData.surname" placeholder="Surname" />
+        <BaseInput v-model="formData.email" placeholder="Email" />
+        <BaseInput v-model="formData.phone" placeholder="Phone Number" />
 
         <BaseBtn>Send</BaseBtn>
       </div>
