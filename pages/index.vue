@@ -12,8 +12,10 @@ const formData = reactive({
   <Header />
 
   <!-- section travel -->
-  <section class="py-2 px-2 h-72 w-1/2 flex items-center justify-center">
-    <TravelCard />
+  <section
+    class="py-2 px-2 w-full grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4"
+  >
+    <TravelCard v-for="index in 12" />
   </section>
 
   <!-- section form -->
