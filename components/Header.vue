@@ -38,7 +38,7 @@ const carousels = [
       <NuxtImg
         sizes="400px md:800px lg:1000px"
         preload
-        loading="lazy"
+        loading="eager"
         format="auto"
         quality="70"
         :src="carousel.img"
