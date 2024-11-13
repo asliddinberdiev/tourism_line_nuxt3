@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const cardItem = reactive({
-  img: "https://uzbekistan.travel/storage/app/media/uploaded-files/samarkand-uzbekistan-kupol-mechet-ploshchad.png",
+  img: "/imgs/samarqand.png",
   name: "zomin",
   description: "Uzbekiston Shvitsariyasi",
 });
