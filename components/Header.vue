@@ -22,36 +22,33 @@ const carousels = [
 </script>
 
 <template>
-  <div class="">
-    <Navbar />
-    <swiper
-      :slidesPerView="1"
-      :spaceBetween="0"
-      :loop="true"
-      :pagination="{
-        clickable: true,
-      }"
-      :speed="1200"
-      :navigation="true"
-      :modules="[EffectCreative, Pagination, Navigation]"
-      class="h-dvh w-full"
-    >
-      <swiper-slide v-for="(carousel, index) in carousels" :key="index">
-        <img
-          :src="carousel.img"
-          :alt="carousel.info"
-          class="object-cover w-full h-full"
-        />
-        <div
-          class="z-10 absolute top-0 left-0 w-full h-full bg-black/30 flex items-end justify-center"
+  <swiper
+    :slidesPerView="1"
+    :spaceBetween="0"
+    :loop="true"
+    :pagination="{
+      clickable: true,
+    }"
+    :speed="1200"
+    :navigation="true"
+    :modules="[EffectCreative, Pagination, Navigation]"
+    class="h-dvh w-full"
+  >
+    <swiper-slide v-for="(carousel, index) in carousels" :key="index">
+      <img
+        :src="carousel.img"
+        :alt="carousel.info"
+        class="object-cover w-full h-full"
+      />
+      <div
+        class="z-10 absolute top-0 left-0 w-full h-full bg-black/30 flex items-end justify-center"
+      >
+        <h1
+          class="text-white text-4xl font-bold mb-32 mx-3 text-center backdrop-blur-sm p-2 bg-black/30 rounded-md"
         >
-          <h1
-            class="text-white text-4xl font-bold mb-32 mx-3 text-center backdrop-blur-sm p-2 bg-black/30 rounded-md"
-          >
-            {{ carousel.info }}
-          </h1>
-        </div>
-      </swiper-slide>
-    </swiper>
-  </div>
+          {{ carousel.info }}
+        </h1>
+      </div>
+    </swiper-slide>
+  </swiper>
 </template>

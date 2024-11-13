@@ -8,6 +8,14 @@ const formData = reactive({
 </script>
 
 <template>
+  <!-- header -->
+  <Header />
+
+  <!-- section travel -->
+  <section class="py-2 px-2 h-72 w-1/2 flex items-center justify-center">
+    <TravelCard />
+  </section>
+
   <!-- section form -->
   <section class="flex items-center justify-center p-2 w-full">
     <div

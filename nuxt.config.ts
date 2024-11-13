@@ -4,7 +4,12 @@ export default defineNuxtConfig({
   ssr: true,
   pages: true,
   css: ["@/assets/css/main.css"],
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/i18n", "@pinia/nuxt"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/i18n",
+    "@pinia/nuxt",
+    "@nuxt/image",
+  ],
   i18n: {
     langDir: "./locales",
     locales: [
@@ -14,5 +19,15 @@ export default defineNuxtConfig({
     ],
     defaultLocale: "uz",
     strategy: "prefix_and_default",
+  },
+  image: {
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+    },
   },
 });
