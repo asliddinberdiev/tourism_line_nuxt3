@@ -30,4 +30,17 @@ export default defineNuxtConfig({
       xxl: 1536,
     },
   },
+  nitro: {
+    publicAssets: [
+      {
+        baseURL: "/",
+        dir: "public/imgs",
+        maxAge: 60 * 60 * 24 * 365,
+      },
+    ],
+    compressPublicAssets: {
+      brotli: true,
+      gzip: true,
+    },
+  },
 });
