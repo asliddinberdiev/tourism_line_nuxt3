@@ -11,11 +11,11 @@ const carousels = [
     info: "Samarqand Madaniyatlar chorrahasi",
   },
   {
-    img: "/images/samarqand.png",
+    img: "/images/buxoro.jpg",
     info: "Buxoro Islom madaniyati poytaxti",
   },
   {
-    img: "/images/samarqand.png",
+    img: "/images/xiva.jpeg",
     info: "Xiva - Turk dunyosining poytaxti",
   },
 ];
