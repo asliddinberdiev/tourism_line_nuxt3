@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const cardItem = reactive({
-  img: "/imgs/samarqand.png",
+  img: "/images/samarqand.png",
   name: "zomin",
   description: "Uzbekiston Shvitsariyasi",
 });

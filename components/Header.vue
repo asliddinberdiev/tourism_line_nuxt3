@@ -7,15 +7,15 @@ import "swiper/css/navigation";
 
 const carousels = [
   {
-    img: "/imgs/samarqand.png",
+    img: "/images/samarqand.png",
     info: "Samarqand Madaniyatlar chorrahasi",
   },
   {
-    img: "/imgs/samarqand.png",
+    img: "/images/samarqand.png",
     info: "Buxoro Islom madaniyati poytaxti",
   },
   {
-    img: "/imgs/samarqand.png",
+    img: "/images/samarqand.png",
     info: "Xiva - Turk dunyosining poytaxti",
   },
 ];

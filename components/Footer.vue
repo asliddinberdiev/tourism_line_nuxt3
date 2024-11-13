@@ -15,7 +15,7 @@
           format="auto"
           quality="70"
           alt="form"
-          src="/imgs/logo.png"
+          src="/images/logo.png"
           class="object-cover pb-3"
           width="160"
         />

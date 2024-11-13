@@ -13,7 +13,7 @@
           loading="lazy"
           format="auto"
           quality="70"
-          src="/imgs/logo.png"
+          src="/images/logo.png"
           class="object-cover h-16 w-16"
           height="64"
           width="64"

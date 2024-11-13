@@ -34,7 +34,7 @@ export default defineNuxtConfig({
     publicAssets: [
       {
         baseURL: "/",
-        dir: "public/imgs",
+        dir: "public/images",
         maxAge: 60 * 60 * 24,
       },
     ],
