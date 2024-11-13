@@ -22,7 +22,9 @@ const cardItem = reactive({
       height="200"
       width="200"
     />
-    <div class="h-full flex flex-col items-center justify-end bg-black/30 pb-10">
+    <div
+      class="rounded-md h-full flex flex-col items-center justify-end bg-black/30 pb-10"
+    >
       <div
         class="group-hover:-translate-y-4 text-center transition-all ease-linear duration-300"
       >
