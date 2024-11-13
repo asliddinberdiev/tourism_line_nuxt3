@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   ssr: true,
   pages: true,
   css: ["@/assets/css/main.css"],
+  plugins: [
+    { src: "~/plugins/aos", ssr: false, mode: "client" },
+  ],
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxtjs/i18n",

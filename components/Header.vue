@@ -4,21 +4,19 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import type { PropType } from "vue";
 
-const carousels = [
-  {
-    img: "/images/samarqand.png",
-    info: "Samarqand Madaniyatlar chorrahasi",
+interface carouselItem {
+  img: string;
+  info: string;
+}
+
+defineProps({
+  carousels: {
+    type: Array as PropType<carouselItem[]>,
+    requered: true,
   },
-  {
-    img: "/images/buxoro.jpg",
-    info: "Buxoro Islom madaniyati poytaxti",
-  },
-  {
-    img: "/images/xiva.jpeg",
-    info: "Xiva - Turk dunyosining poytaxti",
-  },
-];
+});
 </script>
 
 <template>
@@ -39,7 +37,6 @@ const carousels = [
         sizes="800px md:1200px lg:1400px"
         preload
         format="webp"
-        quality="90"
         :src="carousel.img"
         :alt="carousel.info"
         class="object-cover w-full h-full"

@@ -1,5 +1,7 @@
 <template>
-  <Navbar />
-  <slot />
-  <Footer />
+  <div class="bg-white">
+    <Navbar />
+    <slot />
+    <Footer />
+  </div>
 </template>

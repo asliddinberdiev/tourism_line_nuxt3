@@ -5,17 +5,56 @@ const formData = reactive({
   email: "",
   phone: "",
 });
+
+const headerCarousels = [
+  {
+    img: "/images/samarqand.webp",
+    info: "Samarqand Madaniyatlar chorrahasi",
+  },
+  {
+    img: "/images/buxoro.jpg",
+    info: "Buxoro Islom madaniyati poytaxti",
+  },
+  {
+    img: "/images/xiva.jpeg",
+    info: "Xiva - Turk dunyosining poytaxti",
+  },
+];
+
+const travelCards = [
+  {
+    img: "/images/shahrisabz.jpg",
+    name: "shahrisabz",
+  },
+  {
+    img: "/images/tashkent.jpg",
+    name: "tashkent",
+  },
+  {
+    img: "/images/nukus.jpg",
+    name: "nukus",
+  },
+  {
+    img: "/images/xiva.webp",
+    name: "xiva",
+  },
+];
 </script>
 
 <template>
   <!-- header -->
-  <Header />
+  <Header :carousels="headerCarousels" />
 
   <!-- section travel -->
   <section
-    class="py-4 px-32 w-full grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 lg:gap-12"
+    class="py-4 px-4 sm:px-12 md:px-24 lg:px-32 w-full grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
   >
-    <TravelCard v-for="index in 12" />
+    <TravelCard
+      v-for="(card, index) in travelCards"
+      :key="index"
+      :card="card"
+      :data-aos="`${index % 2 === 0 ? 'flip-left' : 'flip-right'}`"
+    />
   </section>
 
   <!-- section form -->
@@ -28,9 +67,9 @@ const formData = reactive({
         preload
         loading="lazy"
         format="webp"
-        quality="70"
+        quality="80"
         alt="form"
-        src="/images/samarqand.png"
+        src="/images/samarqand.webp"
         class="object-cover w-full md:w-1/2 rounded-md"
         height="200"
         width="200"
