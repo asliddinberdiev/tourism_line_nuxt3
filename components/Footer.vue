@@ -12,7 +12,7 @@
           sizes="200px md:400px lg:600px"
           preload
           loading="lazy"
-          format="auto"
+          format="webp"
           quality="70"
           alt="form"
           src="/images/logo.png"

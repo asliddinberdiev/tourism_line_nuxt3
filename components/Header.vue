@@ -39,7 +39,7 @@ const carousels = [
         sizes="400px md:800px lg:1000px"
         preload
         loading="eager"
-        format="auto"
+        format="webp"
         quality="70"
         :src="carousel.img"
         :alt="carousel.info"

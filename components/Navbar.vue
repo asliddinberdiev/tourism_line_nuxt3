@@ -11,7 +11,7 @@
           sizes="64px"
           preload
           loading="lazy"
-          format="auto"
+          format="webp"
           quality="70"
           src="/images/logo.png"
           class="object-cover h-16 w-16"
