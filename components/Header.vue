@@ -7,15 +7,15 @@ import "swiper/css/navigation";
 
 const carousels = [
   {
-    img: "https://uzbekistan.travel/storage/app/media/uploaded-files/samarkand-uzbekistan-kupol-mechet-ploshchad.png",
+    img: "/imgs/samarqand.png",
     info: "Samarqand Madaniyatlar chorrahasi",
   },
   {
-    img: "https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/cropped-images/shutterstock_1007253181-0-0-0-0-1728474450.jpg",
+    img: "/imgs/samarqand.png",
     info: "Buxoro Islom madaniyati poytaxti",
   },
   {
-    img: "https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/cropped-images/2079897013-0-0-0-0-1728537570.jpg",
+    img: "/imgs/samarqand.png",
     info: "Xiva - Turk dunyosining poytaxti",
   },
 ];
@@ -35,10 +35,17 @@ const carousels = [
     class="h-dvh w-full"
   >
     <swiper-slide v-for="(carousel, index) in carousels" :key="index">
-      <img
+      <NuxtImg
+        sizes="400px md:800px lg:1000px"
+        preload
+        loading="lazy"
+        format="auto"
+        quality="70"
         :src="carousel.img"
         :alt="carousel.info"
         class="object-cover w-full h-full"
+        height="200"
+        width="200"
       />
       <div
         class="z-10 absolute top-0 left-0 w-full h-full bg-black/30 flex items-end justify-center"

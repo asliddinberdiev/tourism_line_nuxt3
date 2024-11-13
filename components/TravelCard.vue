@@ -14,8 +14,8 @@ const cardItem = reactive({
       sizes="200px md:400px lg:600px"
       preload
       loading="lazy"
-      format="webp"
-      quality="80"
+      format="auto"
+      quality="70"
       :alt="cardItem.name"
       :src="cardItem.img"
       class="rounded-md w-full h-full object-cover -z-10 absolute top-0 left-0"
