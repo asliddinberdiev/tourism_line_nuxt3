@@ -12,7 +12,6 @@ const cardItem = reactive({
   >
     <NuxtImg
       sizes="200px md:400px lg:600px"
-      preload
       loading="lazy"
       format="webp"
       quality="70"
