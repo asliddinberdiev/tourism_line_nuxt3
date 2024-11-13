@@ -36,11 +36,11 @@ const carousels = [
   >
     <swiper-slide v-for="(carousel, index) in carousels" :key="index">
       <NuxtImg
-        sizes="400px md:800px lg:1000px"
+        sizes="800px md:1200px lg:1600px"
         preload
         loading="eager"
         format="webp"
-        quality="70"
+        quality="80"
         :src="carousel.img"
         :alt="carousel.info"
         class="object-cover w-full h-full"
