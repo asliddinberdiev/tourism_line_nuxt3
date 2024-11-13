@@ -1,44 +1,5 @@
 <script setup lang="ts">
-const formData = reactive({
-  name: "",
-  surname: "",
-  email: "",
-  phone: "",
-});
-
-const headerCarousels = [
-  {
-    img: "/images/samarqand.webp",
-    info: "Samarqand Madaniyatlar chorrahasi",
-  },
-  {
-    img: "/images/buxoro.jpg",
-    info: "Buxoro Islom madaniyati poytaxti",
-  },
-  {
-    img: "/images/xiva.jpeg",
-    info: "Xiva - Turk dunyosining poytaxti",
-  },
-];
-
-const travelCards = [
-  {
-    img: "/images/shahrisabz.jpg",
-    name: "shahrisabz",
-  },
-  {
-    img: "/images/tashkent.jpg",
-    name: "tashkent",
-  },
-  {
-    img: "/images/nukus.jpg",
-    name: "nukus",
-  },
-  {
-    img: "/images/xiva.webp",
-    name: "xiva",
-  },
-];
+const {headerCarousels, travelCards, formData} = useIndex();
 </script>
 
 <template>
