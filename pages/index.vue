@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const {headerCarousels, travelCards, formData} = useIndex();
+const {headerCarousels, travelCards, infoCards, formData} = useIndex();
 </script>
 
 <template>
@@ -16,6 +16,12 @@ const {headerCarousels, travelCards, formData} = useIndex();
       :card="card"
       :data-aos="`${index % 2 === 0 ? 'flip-left' : 'flip-right'}`"
     />
+  </section>
+
+  <section class="py-4 px-4 sm:px-12 md:px-24 lg:px-32 w-full grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12">
+    <InfoCard v-for="(card, index) in infoCards"
+      :key="index"
+      :card="card" />
   </section>
 
   <!-- section form -->

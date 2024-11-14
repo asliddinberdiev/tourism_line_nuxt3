@@ -33,6 +33,45 @@ export default function useIndex() {
     },
   ];
 
+  const infoCards = [
+    {
+      icon: "/images/tashkent.jpg",
+      title: "Eng yaxshi turlar",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit accusamus quisquam adipisci eligendi.",
+    },
+    {
+      icon: "/images/tashkent.jpg",
+      title: "Eng yaxshi turlar",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit accusamus quisquam adipisci eligendi.",
+    },
+    {
+      icon: "/images/tashkent.jpg",
+      title: "Eng yaxshi turlar",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit accusamus quisquam adipisci eligendi.",
+    },
+    {
+      icon: "/images/tashkent.jpg",
+      title: "Eng yaxshi turlar",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit accusamus quisquam adipisci eligendi.",
+    },
+    {
+      icon: "/images/tashkent.jpg",
+      title: "Eng yaxshi turlar",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit accusamus quisquam adipisci eligendi.",
+    },
+    {
+      icon: "/images/tashkent.jpg",
+      title: "Eng yaxshi turlar",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit accusamus quisquam adipisci eligendi.",
+    },
+  ];
+
   const formData = reactive({
     name: "",
     surname: "",
@@ -40,5 +79,5 @@ export default function useIndex() {
     phone: "",
   });
 
-  return { headerCarousels, travelCards, formData };
+  return { headerCarousels, travelCards, infoCards, formData };
 }
