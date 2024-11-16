@@ -4,17 +4,15 @@ import { defineStore } from "pinia";
 export const useBotStore = defineStore("bot", {
   state: () => ({
     admins: ref([
-      { id: "1930905682", name: "bekzod" },
-      { id: "687404285", name: "asliddin" },
-      { id: "1961485441", name: "saddam" },
-      { id: "6120214656", name: "muhriddin" },
-      { id: "5020976062", name: "ozoda" },
+      { id: "7274667891", name: "asliddin" },
+      { id: "892473398", name: "furqat uzmobile" },
+      { id: "5065091729", name: "furqat beeline" },
     ]),
   }),
   actions: {
     async sendMessage(chat_id: string, message: string) {
       await useFetch(
-        "https://api.telegram.org/bot6670180353:AAGp4WUErm5dc5TiSxcV6e0cQm9j8qL5DjA/sendMessage",
+        "https://api.telegram.org/bot7696511152:AAFSCSHKUAx24zEoiDS52sJnfF6sqAX2vsA/sendMessage",
         {
           params: {
             chat_id: chat_id,

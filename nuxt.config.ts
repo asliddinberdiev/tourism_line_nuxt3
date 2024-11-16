@@ -16,13 +16,13 @@ export default defineNuxtConfig({
   ],
   i18n: {
     langDir: "./locales",
-    locales: [
-      { code: "en", file: "en.ts" },
-      { code: "ru", file: "ru.ts" },
-      { code: "uz", file: "uz.ts" },
-    ],
     defaultLocale: "uz",
     strategy: "prefix_and_default",
+    locales: [
+      { code: "uz", file: "uz.ts" },
+      { code: "en", file: "en.ts" },
+      { code: "ru", file: "ru.ts" },
+    ],
   },
   image: {
     screens: {

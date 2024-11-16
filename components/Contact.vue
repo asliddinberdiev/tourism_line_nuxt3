@@ -79,7 +79,7 @@ const { name, surname, phone, address, message, userSubmit, formMeta } =
       <!-- message -->
       <textarea
         v-model="message.value.value"
-        class="w-full outline-none indent-3 border text-lg transition-all rounded-lg"
+        class="w-full outline-none px-3 border text-lg transition-all rounded-lg"
         placeholder="Qo'shimcha xabar qoldirishingiz mumkin"
         rows="3"
       />

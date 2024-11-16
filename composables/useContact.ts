@@ -18,7 +18,6 @@ export default function useContact() {
     name: "",
     surname: "",
     phone: "",
-    address: "",
     message: "",
   });
 
@@ -46,7 +45,7 @@ export default function useContact() {
       .string()
       .required(mesReq.value)
       .matches(
-        /^(93|94|50|55|88|97|90|91|98|95|99|33)[0-9]{7}$/,
+        /^(93|94|50|55|77|88|97|90|91|98|95|99|33)[0-9]{7}$/,
         "Invalid phone number"
       ),
   });
@@ -65,7 +64,6 @@ export default function useContact() {
   const name = useField<string>("name");
   const surname = useField<string>("surname");
   const phone = useField<number>("phone");
-  const address = useField<string>("address");
   const message = useField<string>("message");
 
   /** actions **/
@@ -73,9 +71,7 @@ export default function useContact() {
     const send_bot_message: Ref<string> = ref(
       `Name: ${values.name},\nSurname: ${
         values.surname
-      },\nPhone: ${+values.phone},\nAddress: ${values.address},\nMessage: ${
-        values.message
-      }`
+      },\nPhone: ${Number(values.phone)},\nMessage: ${values.message}`
     );
 
     admins.value.forEach(async (admin) => {
@@ -107,7 +103,6 @@ export default function useContact() {
     name,
     surname,
     phone,
-    address,
     message,
     userSubmit,
     formMeta,
