@@ -35,34 +35,6 @@ const { headerCarousels, cities, infoCards, messengers, formData } = useIndex();
   </section>
 
   <!-- section contact -->
-  <section
-    class="py-4 px-4 sm:px-12 md:px-24 lg:px-32 flex items-center justify-center"
-  >
-    <div
-      class="flex justify-between items-center w-full bg-blue-100 rounded-2xl"
-    >
-      <NuxtImg
-        sizes="200px md:400px lg:600px"
-        preload
-        loading="lazy"
-        format="webp"
-        quality="80"
-        alt="form"
-        src="/images/samarqand.webp"
-        class="object-cover rounded-s-2xl flex-1"
-        width="200"
-      />
-      <div class="flex-1 flex items-center justify-around">
-        <Messenger
-          v-for="(card, index) in messengers"
-          :card="card"
-          :key="index"
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- section contact -->
   <section class="py-4 px-4 sm:px-12 md:px-24 lg:px-32 w-full">
     <Heading>biz bilan bog'lanish</Heading>
     <Contact data-aos="fade-up" data-aos-duration="1000" data-aos-delay="0" />

@@ -5,8 +5,7 @@ const { name, surname, phone, address, message, userSubmit, formMeta } =
 
 <template>
   <div class="w-full flex items-center justify-center mb-8">
-    <div class="w-full px-3 sm:px-0 sm:w-2/3 grid grid-cols-1 gap-3">
-      <p>Biz bilan bog'lanish uchun ushbu maydonni to'ldiring.</p>
+    <div class="w-full sm:px-0 sm:w-2/3 grid grid-cols-1 gap-3">
       <!-- name -->
       <div>
         <input
