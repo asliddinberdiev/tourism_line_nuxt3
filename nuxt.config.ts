@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   css: ["@/assets/css/main.css"],
   plugins: [
     { src: "~/plugins/aos", ssr: false, mode: "client" },
+    { src: "~/plugins/toast", ssr: false, mode: "client" },
   ],
   modules: [
     "@nuxtjs/tailwindcss",
@@ -32,6 +33,9 @@ export default defineNuxtConfig({
       xl: 1280,
       xxl: 1536,
     },
+  },
+  build: {
+    transpile: ["vue-toastification"],
   },
   nitro: {
     publicAssets: [
