@@ -30,7 +30,7 @@ defineProps({
     :speed="1200"
     :navigation="true"
     :modules="[EffectCreative, Pagination, Navigation]"
-    class="h-dvh w-full"
+    class="swiper w-full"
   >
     <swiper-slide v-for="(carousel, index) in carousels" :key="index">
       <NuxtImg
@@ -55,3 +55,9 @@ defineProps({
     </swiper-slide>
   </swiper>
 </template>
+
+<style>
+.swiper {
+  height: calc(100dvh - 60px);
+}
+</style>

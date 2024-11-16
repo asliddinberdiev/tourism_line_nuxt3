@@ -1,12 +1,6 @@
 <script setup lang="ts">
-const { headerCarousels, travelCards, infoCards, formData } = useIndex();
-
-onMounted(() => {
-  localStorage.setItem("test1", "123");
-  localStorage.setItem("test2", "321");
-  let cookie = useCookie("username", { secure: true, maxAge: 5 });
-  cookie.value = "1234567";
-});
+const { headerCarousels, travelCards, infoCards, messengerCards, formData } =
+  useIndex();
 </script>
 
 <template>
@@ -14,23 +8,22 @@ onMounted(() => {
   <Header :carousels="headerCarousels" />
 
   <!-- section travel -->
-  <section
-    class="py-4 px-4 sm:px-12 md:px-24 lg:px-32 w-full grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
-  >
-    <TravelCard
-      v-for="(card, index) in travelCards"
-      :key="index"
-      :card="card"
-      :data-aos="`${index % 2 === 0 ? 'flip-left' : 'flip-right'}`"
-    />
+  <section class="py-4 px-4 sm:px-12 md:px-24 lg:px-32 w-full">
+    <Heading>O'zbekiston shaharlari</Heading>
+
+    <div class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <TravelCard
+        v-for="(card, index) in travelCards"
+        :key="index"
+        :card="card"
+        :data-aos="`${index % 2 === 0 ? 'flip-left' : 'flip-right'}`"
+      />
+    </div>
   </section>
 
   <!-- section info -->
   <section class="py-4 px-4 sm:px-12 md:px-24 lg:px-32">
-    <h2 class="font-medium text-2xl md:text-5xl mb-10">
-      Nima uchun 99% sayyohlar bizni tanlaydilar
-    </h2>
-
+    <Heading>Nima uchun 99% sayyohlar bizni tanlaydilar</Heading>
     <div
       class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-12"
     >
@@ -43,7 +36,7 @@ onMounted(() => {
     class="py-4 px-4 sm:px-12 md:px-24 lg:px-32 flex items-center justify-center"
   >
     <div
-      class="flex justify-between items-center w-full bg-green-500 rounded-md"
+      class="flex justify-between items-center w-full bg-blue-100 rounded-2xl"
     >
       <NuxtImg
         sizes="200px md:400px lg:600px"
@@ -53,54 +46,15 @@ onMounted(() => {
         quality="80"
         alt="form"
         src="/images/samarqand.webp"
-        class="object-cover rounded-s-md flex-1"
+        class="object-cover rounded-s-2xl flex-1"
         width="200"
       />
       <div class="flex-1 flex items-center justify-around">
-        <div
-          class="rounded-full h-28 w-28 p-5 flex items-center justify-center bg-white/90"
-        >
-          <NuxtImg
-            sizes="100px"
-            loading="lazy"
-            format="webp"
-            alt="telegram"
-            src="/images/telegram.png"
-            class="w-full h-full rounded-full object-cover"
-            height="100"
-            width="100"
-          />
-        </div>
-
-        <div
-          class="rounded-full h-28 w-28 p-5 flex items-center justify-center bg-white/90"
-        >
-          <NuxtImg
-            sizes="100px"
-            loading="lazy"
-            format="webp"
-            alt="facebook"
-            src="/images/facebook.png"
-            class="w-full h-full rounded-full object-cover"
-            height="100"
-            width="100"
-          />
-        </div>
-
-        <div
-          class="rounded-full h-28 w-28 p-5 flex items-center justify-center bg-white/90"
-        >
-          <NuxtImg
-            sizes="100px"
-            loading="lazy"
-            format="webp"
-            alt="instagram"
-            src="/images/instagram.png"
-            class="w-full h-full rounded-full object-cover"
-            height="100"
-            width="100"
-          />
-        </div>
+        <Messenger
+          v-for="(card, index) in messengerCards"
+          :card="card"
+          :key="index"
+        />
       </div>
     </div>
   </section>
@@ -118,7 +72,7 @@ onMounted(() => {
         quality="80"
         alt="form"
         src="/images/samarqand.webp"
-        class="object-cover w-full md:w-1/2 rounded-md"
+        class="object-cover w-full md:w-1/2 rounded-2xl"
         height="200"
         width="200"
       />

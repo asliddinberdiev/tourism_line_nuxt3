@@ -1,12 +1,17 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { menus, messengerCards } = useIndex();
+const router = useRouter();
+
+const isOpen = ref(false);
+</script>
 
 <template>
-  <div class="h-16 w-full bg-black/70 fixed top-0 left-0 z-10">
+  <div class="sticky top-0 h-16 w-full backdrop-invert-0 backdrop-opacity-5 bg-black/90 z-10">
     <nav
       class="h-16 py-5 px-2 md:px-10 xl:px-14 flex items-center justify-between"
     >
       <!-- logo -->
-      <a href="/">
+      <NuxtLinkLocale to="/">
         <NuxtImg
           sizes="64px"
           preload
@@ -18,54 +23,83 @@
           height="64"
           width="64"
         />
-      </a>
+      </NuxtLinkLocale>
 
       <!-- desktop menu -->
       <ul
         class="hidden md:flex items-center justify-between md:gap-x-14 lg:gap-x-16 xl:gap-x-24"
       >
-        <li>
-          <a
-            href="/"
-            class="text-white text-xl font-semibold uppercase hover:text-blue-700 transition-colors duration-300 ease-in-out"
-          >
-            Bosh sahifa
-          </a>
-        </li>
-        <li>
-          <a
-            href="#about"
-            class="text-white text-xl font-semibold uppercase hover:text-blue-700 transition-colors duration-300 ease-in-out"
-          >
-            Sayohatlar
-          </a>
-        </li>
-        <li>
-          <a
-            href="#gallery"
-            class="text-white text-xl font-semibold uppercase hover:text-blue-700 transition-colors duration-300 ease-in-out"
-          >
-            Biz haqimizda
-          </a>
-        </li>
-        <li>
-          <button
-            type="button"
-            class="bg-primary px-7 py-1.5 rounded-3xl font-medium hover:text-white transition-colors duration-300 ease-in-out"
-          >
-            Contact
-          </button>
+        <li v-for="(menu, index) in menus">
+          <NuxtLinkLocale class="flex flex-col" :key="index" :to="menu.path">
+            <span
+              class="uppercase text-sm lg:text-lg hover:text-white transition-colors hover:cursor-pointer font-medium"
+              :class="
+                router.currentRoute.value.path.includes(menu.path)
+                  ? 'text-white'
+                  : 'text-white/50'
+              "
+            >
+              {{ menu.text }}
+            </span>
+          </NuxtLinkLocale>
         </li>
       </ul>
 
-      <!-- mobile menu -->
+      <!-- mobile -->
       <div
+        @click="isOpen = !isOpen"
+        v-if="!isOpen"
         class="flex md:hidden flex-col w-8 gap-y-1.5 hover:cursor-pointer hover:gap-y-1 transition-all duration-300"
       >
-        <span class="inline-block w-full py-0.5 bg-black"></span>
-        <span class="inline-block w-full py-0.5 bg-black"></span>
-        <span class="inline-block w-full py-0.5 bg-black"></span>
+        <span class="inline-block w-full py-0.5 bg-white"></span>
+        <span class="inline-block w-full py-0.5 bg-white"></span>
+        <span class="inline-block w-full py-0.5 bg-white"></span>
+      </div>
+
+      <div
+        @click="isOpen = !isOpen"
+        v-if="isOpen"
+        class="h-screen w-full fixed top-0 right-0"
+      >
+        <div
+          data-aos="fade-left"
+          data-aos-offset="500"
+          data-aos-duration="500"
+          class="bg-black/90 w-2/3 sm:w-1/2 h-screen ml-auto"
+        >
+          <ul class="flex items-center justify-center pt-10 flex-col">
+            <li v-for="(menu, index) in menus" class="text-white mb-2">
+              <NuxtLink :key="index" :to="menu.path">
+                <h2
+                  class="text-lg uppercase hover:cursor-pointer transition-all"
+                >
+                  {{ menu.text }}
+                </h2>
+              </NuxtLink>
+            </li>
+            <div class="w-full h-16 flex items-center justify-around px-8 mt-4">
+              <a
+                v-for="(messenger, index) in messengerCards"
+                :key="index"
+                :href="messenger.url"
+              >
+                <NuxtImg
+                  sizes="32px"
+                  loading="lazy"
+                  format="webp"
+                  :alt="messenger.name"
+                  :src="messenger.img"
+                  class="w-full h-full rounded-full object-cover"
+                  height="32"
+                  width="32"
+                />
+              </a>
+            </div>
+          </ul>
+        </div>
       </div>
     </nav>
   </div>
 </template>
+
+

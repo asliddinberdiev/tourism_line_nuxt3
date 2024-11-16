@@ -1,4 +1,22 @@
 export default function useIndex() {
+  const menus = [
+    {
+      path: "tours",
+      text: "sayohatlar",
+    },
+    {
+      path: "gallery",
+      text: "gallery",
+    },
+    {
+      path: "about",
+      text: "about",
+    },
+    {
+      path: "contact",
+      text: "contact",
+    },
+  ];
   const headerCarousels = [
     {
       img: "/images/samarqand.webp",
@@ -72,6 +90,24 @@ export default function useIndex() {
     },
   ];
 
+  const messengerCards = [
+    {
+      url: "https://t.me/berdiev_blogs",
+      img: "/images/telegram.svg",
+      name: "telegram",
+    },
+    {
+      url: "https://t.me/berdiev_blogs",
+      img: "/images/telegram.svg",
+      name: "instgram",
+    },
+    {
+      url: "https://t.me/berdiev_blogs",
+      img: "/images/telegram.svg",
+      name: "facebook",
+    },
+  ];
+
   const formData = reactive({
     name: "",
     surname: "",
@@ -79,5 +115,5 @@ export default function useIndex() {
     phone: "",
   });
 
-  return { headerCarousels, travelCards, infoCards, formData };
+  return { menus, headerCarousels, travelCards, infoCards, messengerCards, formData };
 }
