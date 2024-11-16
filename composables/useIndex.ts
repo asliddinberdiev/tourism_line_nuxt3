@@ -1,8 +1,8 @@
 export default function useIndex() {
   const menus = [
     {
-      path: "tours",
-      text: "sayohatlar",
+      path: "cities",
+      text: "shaharlar",
     },
     {
       path: "gallery",
@@ -32,7 +32,7 @@ export default function useIndex() {
     },
   ];
 
-  const travelCards = [
+  const cities = [
     {
       img: "/images/shahrisabz.jpg",
       name: "shahrisabz",
@@ -90,7 +90,7 @@ export default function useIndex() {
     },
   ];
 
-  const messengerCards = [
+  const messengers = [
     {
       url: "https://t.me/berdiev_blogs",
       img: "/images/telegram.svg",
@@ -115,5 +115,5 @@ export default function useIndex() {
     phone: "",
   });
 
-  return { menus, headerCarousels, travelCards, infoCards, messengerCards, formData };
+  return { menus, headerCarousels, cities, infoCards, messengers, formData };
 }

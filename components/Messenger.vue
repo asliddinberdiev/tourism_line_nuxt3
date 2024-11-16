@@ -4,6 +4,7 @@ import type { PropType } from "vue";
 interface cardProp {
   img: string;
   name: string;
+  url: string;
 }
 
 defineProps({
@@ -15,18 +16,21 @@ defineProps({
 </script>
 
 <template>
-  <div
-    class="rounded-full h-28 w-28 p-5 flex items-center justify-center bg-blue-500 hover:bg-blue-600 hover:cursor-pointer transition-colors"
+  <a
+    :href="card.url"
+    class="rounded-full h-10 w-10 p-1.5 flex items-center justify-center bg-blue-500 hover:bg-blue-600 hover:cursor-pointer transition-colors"
   >
     <NuxtImg
-      sizes="100px"
+    v-if="card.img"
+      sizes="48px"
       loading="lazy"
       format="webp"
       :alt="card.name"
-      :src="card.img"
+      src="/images/telegram.svg"
       class="w-full h-full rounded-full object-cover"
-      height="100"
-      width="100"
+      height="48"
+      width="48"
     />
-  </div>
+    <span v-else class="text-white uppercase font-bold">{{ card.name[0] }}</span>
+  </a>
 </template>

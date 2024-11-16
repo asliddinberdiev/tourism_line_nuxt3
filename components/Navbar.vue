@@ -1,12 +1,14 @@
 <script setup lang="ts">
-const { menus, messengerCards } = useIndex();
+const { menus, messengers } = useIndex();
 const router = useRouter();
 
 const isOpen = ref(false);
 </script>
 
 <template>
-  <div class="sticky top-0 h-16 w-full backdrop-invert-0 backdrop-opacity-5 bg-black/90 z-10">
+  <div
+    class="sticky top-0 h-16 w-full backdrop-invert-0 backdrop-opacity-5 bg-black/90 z-10"
+  >
     <nav
       class="h-16 py-5 px-2 md:px-10 xl:px-14 flex items-center justify-between"
     >
@@ -69,31 +71,27 @@ const isOpen = ref(false);
         >
           <ul class="flex items-center justify-center pt-10 flex-col">
             <li v-for="(menu, index) in menus" class="text-white mb-2">
-              <NuxtLink :key="index" :to="menu.path">
-                <h2
-                  class="text-lg uppercase hover:cursor-pointer transition-all"
+              <NuxtLinkLocale :key="index" :to="menu.path">
+                <span
+                  class="uppercase text-sm lg:text-lg hover:text-white transition-colors hover:cursor-pointer font-medium"
+                  :class="
+                    router.currentRoute.value.path.includes(menu.path)
+                      ? 'text-white'
+                      : 'text-white/50'
+                  "
                 >
                   {{ menu.text }}
-                </h2>
-              </NuxtLink>
+                </span>
+              </NuxtLinkLocale>
             </li>
-            <div class="w-full h-16 flex items-center justify-around px-8 mt-4">
-              <a
-                v-for="(messenger, index) in messengerCards"
+            <div
+              class="w-full h-16 flex flex-row items-center justify-around px-8 mt-4"
+            >
+              <Messenger
+                v-for="(card, index) in messengers"
+                :card="card"
                 :key="index"
-                :href="messenger.url"
-              >
-                <NuxtImg
-                  sizes="32px"
-                  loading="lazy"
-                  format="webp"
-                  :alt="messenger.name"
-                  :src="messenger.img"
-                  class="w-full h-full rounded-full object-cover"
-                  height="32"
-                  width="32"
-                />
-              </a>
+              />
             </div>
           </ul>
         </div>
@@ -101,5 +99,3 @@ const isOpen = ref(false);
     </nav>
   </div>
 </template>
-
-

@@ -1,23 +1,26 @@
 <script setup lang="ts">
-const { headerCarousels, travelCards, infoCards, messengerCards, formData } =
-  useIndex();
+const { headerCarousels, cities, infoCards, messengers, formData } = useIndex();
 </script>
 
 <template>
   <!-- header -->
   <Header :carousels="headerCarousels" />
 
-  <!-- section travel -->
+  <!-- section cites -->
   <section class="py-4 px-4 sm:px-12 md:px-24 lg:px-32 w-full">
     <Heading>O'zbekiston shaharlari</Heading>
 
     <div class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-      <TravelCard
-        v-for="(card, index) in travelCards"
+      <NuxtLinkLocale
+        v-for="(city, index) in cities"
+        :to="`/cities/${city.name}`"
         :key="index"
-        :card="card"
-        :data-aos="`${index % 2 === 0 ? 'flip-left' : 'flip-right'}`"
-      />
+      >
+        <CityCard
+          :card="city"
+          :data-aos="`${index % 2 === 0 ? 'flip-left' : 'flip-right'}`"
+        />
+      </NuxtLinkLocale>
     </div>
   </section>
 
@@ -51,7 +54,7 @@ const { headerCarousels, travelCards, infoCards, messengerCards, formData } =
       />
       <div class="flex-1 flex items-center justify-around">
         <Messenger
-          v-for="(card, index) in messengerCards"
+          v-for="(card, index) in messengers"
           :card="card"
           :key="index"
         />
