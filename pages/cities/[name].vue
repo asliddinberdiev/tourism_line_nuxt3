@@ -45,5 +45,16 @@ const route = useRoute();
       shaharning eng diqqatga sazovor joylarini ko‘rish uchun o‘z yo‘nalishini
       yaratishi mumkin!
     </p>
+    <NuxtImg
+      sizes="800px md:1200px lg:1800px"
+      preload
+      loading="lazy"
+      format="webp"
+      quality="70"
+      alt="form"
+      src="/images/buxoro.jpg"
+      class="object-cover pb-3"
+      width="1800"
+    />
   </div>
 </template>
