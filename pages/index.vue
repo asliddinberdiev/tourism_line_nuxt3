@@ -6,23 +6,24 @@ const { headerCarousels, cities, infoCards, messengers, formData } = useIndex();
   <!-- header -->
   <Header :carousels="headerCarousels" />
 
-  <!-- section cites -->
-  <section class="py-4 px-4 sm:px-12 md:px-24 lg:px-32 w-full">
-    <Heading>O'zbekiston shaharlari</Heading>
+  <div class="container mx-auto">
+    <!-- section cites -->
+    <section class="flex justify-center flex-col">
+      <Heading>O'zbekiston shaharlari</Heading>
 
-    <div class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-      <NuxtLinkLocale
-        v-for="(city, index) in cities"
-        :to="`/cities/${city.name}`"
-        :key="index"
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-screen-xl mx-auto"
       >
-        <CityCard
-          :card="city"
-          :data-aos="`${index % 2 === 0 ? 'flip-left' : 'flip-right'}`"
-        />
-      </NuxtLinkLocale>
-    </div>
-  </section>
+        <NuxtLinkLocale
+          v-for="(city, index) in cities"
+          :to="`/cities/${city.name}`"
+          :key="index"  
+        >
+          <CityCard :card="city" />
+        </NuxtLinkLocale>
+      </div>
+    </section>
+  </div>
 
   <!-- section info -->
   <section class="py-4 px-4 sm:px-12 md:px-24 lg:px-32">

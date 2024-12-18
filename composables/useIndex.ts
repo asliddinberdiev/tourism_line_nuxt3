@@ -19,7 +19,7 @@ export default function useIndex() {
   ];
   const headerCarousels = [
     {
-      img: "/images/samarqand.webp",
+      img: "/images/samarkand.png",
       info: "Samarqand Madaniyatlar chorrahasi",
     },
     {
@@ -40,6 +40,14 @@ export default function useIndex() {
     {
       img: "/images/tashkent.jpg",
       name: "tashkent",
+    },
+    {
+      img: "/images/nukus.jpg",
+      name: "nukus",
+    },
+    {
+      img: "/images/xiva.webp",
+      name: "xiva",
     },
     {
       img: "/images/nukus.jpg",

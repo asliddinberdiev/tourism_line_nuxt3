@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@pinia/nuxt",
     "@nuxt/image",
+    '@vueuse/nuxt',
   ],
   i18n: {
     langDir: "./locales",

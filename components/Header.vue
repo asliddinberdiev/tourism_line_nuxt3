@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useWindowSize } from '@vueuse/core'
 import { Pagination, Navigation, EffectCreative } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
@@ -17,6 +18,8 @@ defineProps({
     requered: true,
   },
 });
+
+const { width } = useWindowSize();
 </script>
 
 <template>
@@ -27,7 +30,7 @@ defineProps({
     :pagination="{
       clickable: true,
     }"
-    :speed="1200"
+    :speed="width < 768 ? 1000 : 200"
     :navigation="true"
     :modules="[EffectCreative, Pagination, Navigation]"
     class="swiper w-full"
@@ -36,18 +39,16 @@ defineProps({
       <NuxtImg
         sizes="800px md:1200px lg:1400px"
         preload
-        format="webp"
+        format="png"
         :src="carousel.img"
         :alt="carousel.info"
         class="object-cover w-full h-full"
-        height="200"
-        width="200"
       />
       <div
-        class="z-10 absolute top-0 left-0 w-full h-full bg-black/30 flex items-end justify-center"
+        class="z-10 absolute top-0 left-0 w-full h-full bg-black/40 flex items-center justify-center"
       >
         <h1
-          class="text-white text-4xl font-bold mb-32 mx-3 text-center backdrop-blur-sm p-2 bg-black/30 rounded-md"
+          class="text-white text-4xl md:text-5xl font-bold text-center w-9/12"
         >
           {{ carousel.info }}
         </h1>
@@ -59,5 +60,11 @@ defineProps({
 <style>
 .swiper {
   height: calc(100dvh - 60px);
+}
+.swiper-button-prev {
+  color: white !important;
+}
+.swiper-button-next {
+  color: white !important;
 }
 </style>

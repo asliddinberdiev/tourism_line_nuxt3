@@ -13,6 +13,8 @@
     "@nuxt/image": "1.5.0",
     "@nuxtjs/i18n": "^8.3.1",
     "@pinia/nuxt": "^0.5.1",
+    "@vueuse/core": "^12.0.0",
+    "@vueuse/nuxt": "^12.0.0",
     "aos": "^2.3.4",
     "nuxt": "^3.14.159",
     "swiper": "^11.1.14",
@@ -22,8 +24,9 @@
     "yup": "^1.2.0"
   },
   "devDependencies": {
-    "vee-validate": "^4.5.11",
     "@nuxtjs/tailwindcss": "^6.12.2",
-    "@types/aos": "^3.0.7"    
-  }
+    "@types/aos": "^3.0.7",
+    "vee-validate": "^4.5.11"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
